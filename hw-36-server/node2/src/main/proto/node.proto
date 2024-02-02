@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package org.example;
+option java_multiple_files = true;
+
+
+message NodeRequest {
+  string greeting = 1;
+}
+
+message NodeAnswer {
+  string answer = 1;
+}
+
+service Node {
+  rpc sendRequestToNode(NodeRequest) returns (NodeAnswer);
+}

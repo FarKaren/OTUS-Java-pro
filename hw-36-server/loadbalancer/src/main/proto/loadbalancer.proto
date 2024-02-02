@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package org.example;
+option java_multiple_files = true;
+
+message LoadBalancerRequest {
+  string greeting = 1;
+}
+
+message LoadBalancerResponse {
+  string answer = 1;
+}
+
+service LoadBalancer {
+  rpc sendRequestToBalancer(LoadBalancerRequest) returns (stream LoadBalancerResponse);
+}
